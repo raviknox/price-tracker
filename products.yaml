@@ -1,0 +1,9 @@
+products:
+  - name: "Product 1"
+    flipkart_url: "https://www.flipkart.com/product-1-url"
+    amazon_url: "https://www.amazon.in/product-1-url"
+    target_price: 2000.00  # Set your target price
+  - name: "Product 2"
+    flipkart_url: "https://www.flipkart.com/product-2-url"
+    amazon_url: "https://www.amazon.in/product-2-url"
+    target_price: 1500.00  # Set your target price

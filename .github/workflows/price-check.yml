@@ -1,0 +1,21 @@
+name: 🔁 Price Tracker
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  run-tracker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📦 Pull Docker image
+      run: docker pull projectaccuknox/price-tracker:latest
+
+    - name: 🏃 Run Price Tracker
+      run: |
+        docker run --rm \
+          -e DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK_URL }} \
+          projectaccuknox/price-tracker:latest \
+          --config "https://raw.githubusercontent.com/raviknox/price-tracker/main/products.yaml"
